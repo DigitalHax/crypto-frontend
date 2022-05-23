@@ -31,6 +31,8 @@ export const CryptosWidget = () => {
   const coinsListQuery = useCoinList();
 
   // Display query error and loading states
+  if (coinsListQuery.isLoading) return <LoadingState />;
+
   if (
     !coinsListQuery.data ||
     coinsListQuery.data.length == 0 ||
@@ -38,8 +40,6 @@ export const CryptosWidget = () => {
     coinsListQuery.isLoadingError
   )
     return <ErrorState />;
-
-  if (coinsListQuery.isLoading) return <LoadingState />;
 
   return (
     <div className="bg-white rounded-md border border-slate-300 p-4">
