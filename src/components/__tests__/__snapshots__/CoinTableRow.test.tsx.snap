@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<tr>
+  <td
+    className="px-2 text-lg first:pl-5 last:pr-5 py-2.5 whitespace-nowrap"
+  >
+    <div
+      className="flex items-center"
+    >
+      <img
+        className="inline-flex mr-3 h-8 w-8"
+        src="https://assets.coingecko.com/coins/images/5720/large/F1nTlw9I_400x400.jpg?1547041588"
+      />
+      <div
+        className="text-sm text-slate-800 flex flex-col"
+      >
+        <span
+          className="font-semibold text-slate-800 inline-flex items-center gap-x-2"
+        >
+          01coin
+        </span>
+        <span
+          className="text-xs text-slate-500"
+        >
+          ZOC
+        </span>
+      </div>
+    </div>
+  </td>
+  <td
+    className="px-2 text-sm first:pl-5 last:pr-5 py-3 whitespace-nowrap"
+  >
+    <span
+      className="text-left font-medium"
+    >
+      $0.00042911
+    </span>
+  </td>
+  <td
+    className="px-2 text-sm first:pl-5 last:pr-5 py-3 whitespace-nowrap"
+  >
+    <span
+      className="text-left font-medium"
+    >
+      2.56%
+    </span>
+  </td>
+  <td
+    className="px-2 text-sm first:pl-5 last:pr-5 py-3 whitespace-nowrap"
+  >
+    <span
+      className="text-left font-medium"
+    >
+      $0.098696
+    </span>
+  </td>
+  <td
+    className="px-2 text-sm first:pl-5 last:pr-5 py-3 whitespace-nowrap"
+  >
+    <span
+      className="text-left font-medium"
+    >
+      -
+    </span>
+  </td>
+</tr>
+`;

@@ -4,7 +4,7 @@ import { ExtractFnReturnType, QueryConfig } from '@/lib/react-query';
 import { axios } from '@/lib/axios';
 import { CoinDetailed } from '@/types';
 
-export const getCoinsInfo = async (
+export const getCoinsDetailed = async (
   coinIds: string
 ): Promise<CoinDetailed[]> => {
   return axios.get('/coins/markets', {
@@ -12,18 +12,21 @@ export const getCoinsInfo = async (
   });
 };
 
-type QueryFnType = typeof getCoinsInfo;
+type QueryFnType = typeof getCoinsDetailed;
 
-type UseCoinsInfoOptions = {
+type UseCoinsDetailedOptions = {
   coinIds: string;
   config?: QueryConfig<QueryFnType>;
 };
 
-export const useCoinsInfo = ({ config, coinIds }: UseCoinsInfoOptions) => {
+export const useCoinsDetailed = ({
+  config,
+  coinIds
+}: UseCoinsDetailedOptions) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
     ...config,
-    queryKey: ['coins-info'],
-    queryFn: () => getCoinsInfo(coinIds),
+    queryKey: ['coins-detailed'],
+    queryFn: () => getCoinsDetailed(coinIds),
     keepPreviousData: true
   });
 };
