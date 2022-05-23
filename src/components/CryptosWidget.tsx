@@ -1,6 +1,6 @@
 import { useCoinList } from '@/api/getCoinList';
 import { useCoinsInfo } from '@/api/getCoinsInfo';
-import { Coin, CoinInfo } from '@/types';
+import { Coin, CoinDetailed } from '@/types';
 import { numberWithAbbrev, numberWithCommas } from '@/utils/format';
 import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
@@ -190,55 +190,55 @@ const CoinTable = ({ coinIdsString }: { coinIdsString: string }) => {
         </tr>
       </thead>
       <tbody className="text-sm divide-y divide-slate-200">
-        {coinsInfoQuery.data.map((coinInfo, index) => (
-          <CoinTableRow key={index} coinInfo={coinInfo} />
+        {coinsInfoQuery.data.map((coinDetailed, index) => (
+          <CoinTableRow key={index} coinDetailed={coinDetailed} />
         ))}
       </tbody>
     </table>
   );
 };
 
-const CoinTableRow = ({ coinInfo }: { coinInfo: CoinInfo }) => {
+const CoinTableRow = ({ coinDetailed }: { coinDetailed: CoinDetailed }) => {
   return (
     <tr>
       <td className="px-2 text-lg first:pl-5 last:pr-5 py-2.5 whitespace-nowrap">
         <div className="flex items-center">
-          <img className="inline-flex mr-3 h-8 w-8" src={coinInfo.image} />
+          <img className="inline-flex mr-3 h-8 w-8" src={coinDetailed.image} />
           <div className="text-sm text-slate-800 flex flex-col">
             <span className="font-semibold text-slate-800 inline-flex items-center gap-x-2">
-              {coinInfo.name}
+              {coinDetailed.name}
             </span>
             <span className="text-xs text-slate-500">
-              {coinInfo.symbol.toUpperCase()}
+              {coinDetailed.symbol.toUpperCase()}
             </span>
           </div>
         </div>
       </td>
       <td className="px-2 text-sm first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <span className="text-left font-medium">
-          {coinInfo.current_price
-            ? '$' + numberWithCommas(coinInfo.current_price)
+          {coinDetailed.current_price
+            ? '$' + numberWithCommas(coinDetailed.current_price)
             : '-'}
         </span>
       </td>
       <td className="px-2 text-sm first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <span className="text-left font-medium">
-          {coinInfo.price_change_percentage_24h
-            ? coinInfo.price_change_percentage_24h.toFixed(2) + '%'
+          {coinDetailed.price_change_percentage_24h
+            ? coinDetailed.price_change_percentage_24h.toFixed(2) + '%'
             : '-'}
         </span>
       </td>
       <td className="px-2 text-sm first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <span className="text-left font-medium">
-          {coinInfo.total_volume
-            ? '$' + numberWithCommas(coinInfo.total_volume)
+          {coinDetailed.total_volume
+            ? '$' + numberWithCommas(coinDetailed.total_volume)
             : '-'}
         </span>
       </td>
       <td className="px-2 text-sm first:pl-5 last:pr-5 py-3 whitespace-nowrap">
         <span className="text-left font-medium">
-          {coinInfo.market_cap
-            ? '$' + numberWithAbbrev(coinInfo.market_cap)
+          {coinDetailed.market_cap
+            ? '$' + numberWithAbbrev(coinDetailed.market_cap)
             : '-'}
         </span>
       </td>

@@ -4,7 +4,7 @@ export type Coin = {
   name: string;
 };
 
-export type CoinInfo = {
+export type CoinDetailed = {
   id: string;
   symbol: string;
   name: string;

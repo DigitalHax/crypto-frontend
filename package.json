@@ -1,12 +1,11 @@
 {
-  "name": "vite-react-typescript-tailwind-starter",
+  "name": "crypto-frontend",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview --port 3000",
     "lint": "eslint . --ext .ts,.tsx,.js",
-    "prepare": "husky install",
     "test": "jest"
   },
   "dependencies": {
@@ -17,8 +16,6 @@
     "react-query": "^3.39.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.0",
     "@heroicons/react": "^1.0.6",
     "@tailwindcss/forms": "^0.5.2",
     "@types/jest": "^27.5.1",
@@ -34,7 +31,6 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-watch": "^8.0.0",
-    "husky": "^8.0.1",
     "jest": "^28.1.0",
     "postcss": "^8.4.14",
     "prettier": "^2.6.2",

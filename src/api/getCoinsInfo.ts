@@ -2,9 +2,11 @@ import { useQuery } from 'react-query';
 
 import { ExtractFnReturnType, QueryConfig } from '@/lib/react-query';
 import { axios } from '@/lib/axios';
-import { CoinInfo } from '@/types';
+import { CoinDetailed } from '@/types';
 
-export const getCoinsInfo = async (coinIds: string): Promise<CoinInfo[]> => {
+export const getCoinsInfo = async (
+  coinIds: string
+): Promise<CoinDetailed[]> => {
   return axios.get('/coins/markets', {
     params: { vs_currency: 'aud', ids: coinIds }
   });
